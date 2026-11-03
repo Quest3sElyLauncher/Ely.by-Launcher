@@ -1,1 +1,32 @@
-This is a BETA version of the Minecraft launcher. We are not affiliated with the Ely.by team; our launcher is a fan project! We support account logins via Microsoft and Ely.by. Best regards, the Ely Launcher team. We do not steal your data—your login process is completely anonymous, and no one will be able to hack your account. (Probably.)
+Ely.by Launcher
+Неофициальный лаунчер Minecraft с поддержкой Ely.by и Microsoft.
+Требования
+JDK 17 или новее для сборки.
+Для запуска JAR — Java Runtime подходящей версии.
+Windows EXE собирается отдельным Windows-скриптом `make-exe.bat` с помощью `jpackage`.
+Сборка JAR (Linux / macOS / Windows)
+```sh
+./build.sh
+java -jar ely-launcher.jar
+```
+Сборка Windows EXE
+Запустите `make-exe.bat` на Windows. Скрипт скачивает портативный JDK 21 при первом запуске, компилирует проект и создаёт каталог `ElyLauncher/` с `ElyLauncher.exe`.
+Важно: `jpackage` не выполняет кросс-сборку Windows-приложения из Linux. Поэтому Windows EXE следует собирать на Windows runner/машине. На Linux можно собрать JAR командой `./build.sh`.
+Структура
+`src/launcher/` — исходный код Java.
+`build.sh` — сборка JAR.
+`make-exe.bat` — сборка Windows app-image (EXE).
+Безопасность
+Перед публикацией проверьте, что в репозитории нет токенов, паролей, приватных ключей и пользовательских файлов конфигурации. Не публикуйте собранные пользовательские профили или игровые данные.
+Лицензия
+Добавьте файл лицензии, соответствующий правам на исходный код и сторонние компоненты, прежде чем публиковать проект.
+Windows-сборка через GitHub Actions
+Откройте вкладку Actions в GitHub и запустите workflow Windows EXE через `Run workflow`.
+Для автоматической сборки при публикации тега используйте имя вида `v1.0.0`.
+Готовая папка `ElyLauncher/` будет доступна в Artifacts соответствующего запуска.
+Темы и оформление
+В настройках доступен выбор Dark / Light. Иконка приложения использует фирменный логотип Ely.
+VR (Visor / SteamVR)
+В боковой панели выбранного экземпляра есть кнопка «Режим VR». Для установки Visor экземпляр должен использовать Fabric, Forge, NeoForge или Quilt. Лаунчер запрашивает у Modrinth версию Visor, совместимую одновременно с выбранной версией Minecraft и загрузчиком; если подходящей версии нет, отображается ошибка. Нажатие кнопки повторно отключает/включает установленный файл Visor через суффикс `.jar.disabled` (изменение вступает в силу после перезапуска Minecraft).
+Visor использует OpenXR. Для игры через SteamVR установите SteamVR и выберите его как активный OpenXR runtime в настройках SteamVR/системы. Наличие лаунчерной кнопки не запускает SteamVR автоматически и не гарантирует совместимость с любым VR-оборудованием.
+В окне «Установленное…» моды можно включать и выключать без удаления: выбранный файл переименовывается в `.jar.disabled`; изменения применяются после перезапуска Minecraft.
