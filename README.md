@@ -1,0 +1,1 @@
+This is a BETA version of the launcher. We are not affiliated with the Ely.by team; our launcher is a fan project! We support account login via Microsoft and Ely.by. Best regards, the Ely Launcher team.
