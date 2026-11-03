@@ -1,1 +1,1 @@
-This is a BETA version of the launcher. We are not affiliated with the Ely.by team; our launcher is a fan project! We support account login via Microsoft and Ely.by. Best regards, the Ely Launcher team.
+This is a BETA version of the Minecraft launcher. We are not affiliated with the Ely.by team; our launcher is a fan project! We support account logins via Microsoft and Ely.by. Best regards, the Ely Launcher team. We do not steal your data—your login process is completely anonymous, and no one will be able to hack your account. (Probably.)
